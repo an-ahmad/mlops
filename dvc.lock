@@ -16,3 +16,19 @@ stages:
     - path: data/raw/data.pkl
       md5: db0ce1f99a19c844e10a522c1dc35664
       size: 12607892
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/data.pkl
+      md5: db0ce1f99a19c844e10a522c1dc35664
+      size: 12607892
+    - path: src/split_data.py
+      md5: 59c96d6233cab5035f54587086d09a7b
+      size: 1108
+    outs:
+    - path: data/processed/test_data.pkl
+      md5: 0b26ead5915217d997f1df60effcb20b
+      size: 2543838
+    - path: data/processed/train_data.pkl
+      md5: ce13256cfdfc7620c080f551a0f533df
+      size: 10064230

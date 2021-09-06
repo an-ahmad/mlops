@@ -3,3 +3,4 @@ dvc[gdrive]
 sklearn
 pillow
 numpy
+pandas

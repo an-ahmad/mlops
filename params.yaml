@@ -1,6 +1,6 @@
 base:
   project: mlops-project
-  random_state: 42
+  random_state: 1
   target_col: TARGET
 
 data_source:
@@ -13,6 +13,7 @@ split_data:
   train_path: data/processed/train_data.pkl
   test_path: data/processed/test_data.pkl
   test_size: 0.2
+  train_size: 0.8
 
 estimators:
   cnn:
