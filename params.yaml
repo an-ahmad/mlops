@@ -1,0 +1,28 @@
+base:
+  project: mlops-project
+  random_state: 42
+  target_col: TARGET
+
+data_source:
+  sem_source: data_given/data.pkl
+
+load_data:
+  raw_dataset: data/raw/data.pkl
+
+split_data:
+  train_path: data/processed/train_data.pkl
+  test_path: data/processed/test_data.pkl
+  test_size: 0.2
+
+estimators:
+  cnn:
+    params:
+      epochs: 2
+      batch_size: 10
+model_dir: saved_models
+
+reports:
+  params: report/params.json
+  scores: report/scores.json
+
+webapp_model_dir: prediction_service/model/model.joblib
