@@ -42,8 +42,8 @@ stages:
       md5: ce13256cfdfc7620c080f551a0f533df
       size: 10064230
     - path: src/train_and_evaluate.py
-      md5: 92489623adadbf3b8ea859e10b149469
-      size: 2593
+      md5: d1a724be6d72ba1bd9cfe253a0bac660
+      size: 2570
     params:
       params.yaml:
         estimators.cnn.params.batch_size: 10
@@ -55,3 +55,6 @@ stages:
     - path: report/scores.json
       md5: 46faad8fabc8998e086af0810958e2aa
       size: 37
+    - path: saved_models/model.h5
+      md5: 060f914edd237c3af520d173a150ddd8
+      size: 4563096

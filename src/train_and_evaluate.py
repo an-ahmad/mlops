@@ -74,9 +74,9 @@ def train_and_evaluate(config_path):
     #####################################################
 
     os.makedirs(model_dir, exist_ok=True)
-    model_path = os.path.join(model_dir, "model.joblib")
+    model_path = os.path.join(model_dir, "model.h5")
 
-    joblib.dump(model, model_path)
+    model.save(model_path)
 
 
 if __name__ == "__main__":
