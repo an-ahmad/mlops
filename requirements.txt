@@ -4,3 +4,4 @@ sklearn
 pillow
 numpy
 pandas
+tensorflow
