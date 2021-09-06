@@ -47,11 +47,11 @@ stages:
     params:
       params.yaml:
         estimators.cnn.params.batch_size: 10
-        estimators.cnn.params.epochs: 2
+        estimators.cnn.params.epochs: 1
     outs:
     - path: report/params.json
-      md5: 4678bf3563b5025859e1fddddaa39a9c
+      md5: 79956909e11cf8ee6aae6d7e9d2087e5
       size: 41
     - path: report/scores.json
-      md5: 56b829d125c4cdcff0077f75dd86df97
-      size: 38
+      md5: 46faad8fabc8998e086af0810958e2aa
+      size: 37

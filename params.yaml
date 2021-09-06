@@ -18,7 +18,7 @@ split_data:
 estimators:
   cnn:
     params:
-      epochs: 2
+      epochs: 1
       batch_size: 10
 model_dir: saved_models
 
