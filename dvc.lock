@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_given/data.pkl
+      md5: 31f792db3e633bfc4f82ece83f18f681
+      size: 12607891
+    - path: src/get_data.py
+      md5: a668f1ae78ed71addf74af405169e69c
+      size: 628
+    - path: src/load_data.py
+      md5: 13b5d8cbd364716e4dd2f3683f580388
+      size: 506
+    outs:
+    - path: data/raw/data.pkl
+      md5: db0ce1f99a19c844e10a522c1dc35664
+      size: 12607892

@@ -13,9 +13,9 @@ def get_data(config_path):
     config = read_params(config_path)
     # print(config)
     data_path = config["data_source"]["sem_source"]
-    df = pickle.load(open(data_path, 'rb'))
+    sem_data = pickle.load(open(data_path, 'rb'))
 
-    return df
+    return sem_data
 
 
 
