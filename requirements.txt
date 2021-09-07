@@ -1,3 +1,4 @@
+-e .
 dvc
 dvc[gdrive]
 sklearn
@@ -5,3 +6,6 @@ pillow
 numpy
 pandas
 tensorflow
+pytest
+tox
+flake8
