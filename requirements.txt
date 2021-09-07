@@ -9,3 +9,6 @@ tensorflow
 pytest
 tox
 flake8
+flask
+requests
+gunicorn
