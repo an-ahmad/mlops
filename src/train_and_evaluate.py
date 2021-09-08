@@ -4,11 +4,12 @@ import sys
 import numpy as np
 from get_data import read_params
 import argparse
-import joblib
+from urllib.parse import urlparse
 import json
 from tensorflow.keras import models
 from tensorflow.keras import layers
 import pickle
+import mlflow
 
 
 def build_toy_model():
@@ -45,38 +46,62 @@ def train_and_evaluate(config_path):
     X_val = np.asarray(test[0])
     y_val = np.asarray(test[1])
 
-    model = build_toy_model()
-    model.fit(X_train, y_train, epochs=1, batch_size=32,
-              verbose=1, validation_data=(X_val, y_val)) #, callbacks=[save])
-    print(y_val.shape, y_train.shape)
+    ################### MLFLOW ###############################
+    mlflow_config = config["mlflow_config"]
+    remote_server_uri = mlflow_config["remote_server_uri"]
+    mlflow.set_tracking_uri(remote_server_uri)
+    #mlflow.set_tracking_uri('http://127.0.0.1:5000')
 
-    val_accuracy = eval_metrics(X_val, y_val,model)
+    mlflow.set_experiment(mlflow_config["experiment_name"])
 
+    with mlflow.start_run(run_name=mlflow_config["run_name"]) as mlops_run:
 
-    print("  val_acc: {}".format(val_accuracy) )
+        model = build_toy_model()
+        model.fit(X_train, y_train, epochs=1, batch_size=32,
+                  verbose=1, validation_data=(X_val, y_val)) #, callbacks=[save])
+        print(y_val.shape, y_train.shape)
 
-    #####################################################
-    scores_file = config["reports"]["scores"]
-    params_file = config["reports"]["params"]
+        val_accuracy = eval_metrics(X_val, y_val,model)
 
-    with open(scores_file, "w") as f:
-        scores = {
-            "val_acc": val_accuracy,
-        }
-        json.dump(scores, f, indent=4)
+        print("  val_acc: {}".format(val_accuracy) )
 
-    with open(params_file, "w") as f:
-        params = {
-            "epochs": epochs,
-            "batch_size": batch_size,
-        }
-        json.dump(params, f, indent=4)
-    #####################################################
+        #####################################################
+        # scores_file = config["reports"]["scores"]
+        # params_file = config["reports"]["params"]
+        #
+        # with open(scores_file, "w") as f:
+        #     scores = {
+        #         "val_acc": val_accuracy,
+        #     }
+        #     json.dump(scores, f, indent=4)
+        #
+        # with open(params_file, "w") as f:
+        #     params = {
+        #         "epochs": epochs,
+        #         "batch_size": batch_size,
+        #     }
+        #     json.dump(params, f, indent=4)
+        #####################################################
 
-    os.makedirs(model_dir, exist_ok=True)
-    model_path = os.path.join(model_dir, "model.h5")
+        mlflow.log_param("epochs", epochs)
+        mlflow.log_param("batch_size", batch_size)
 
-    model.save(model_path)
+        mlflow.log_metric("val_acc", val_accuracy)
+
+        tracking_url_type_store = urlparse(mlflow.get_artifact_uri()).scheme
+
+        if tracking_url_type_store != "file":
+            mlflow.keras.log_model(
+                model,
+                "model",
+                registered_model_name= mlflow_config["registered_model_name"])
+        else:
+            mlflow.keras.load_model(model, "model")
+
+        # os.makedirs(model_dir, exist_ok=True)
+        # model_path = os.path.join(model_dir, "model.h5")
+        #
+        # model.save(model_path)
 
 
 if __name__ == "__main__":

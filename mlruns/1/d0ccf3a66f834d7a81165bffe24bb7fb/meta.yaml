@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/1/d0ccf3a66f834d7a81165bffe24bb7fb/artifacts
+end_time: 1631085069493
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: d0ccf3a66f834d7a81165bffe24bb7fb
+run_uuid: d0ccf3a66f834d7a81165bffe24bb7fb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1631085066859
+status: 3
+tags: []
+user_id: Ahmed
