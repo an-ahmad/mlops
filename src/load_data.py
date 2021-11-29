@@ -1,6 +1,7 @@
-
+import sys
+sys.path.append("..") 
 import os
-from get_data import read_params, get_data
+from src.get_data import read_params, get_data
 import argparse
 import pickle
 

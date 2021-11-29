@@ -1,7 +1,9 @@
+import sys
+sys.path.append("..") 
 import os
 import argparse
 from sklearn.model_selection import train_test_split
-from get_data import read_params
+from src.get_data import read_params
 import pickle
 
 def split_and_saved_data(config_path):

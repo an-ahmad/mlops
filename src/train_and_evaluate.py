@@ -1,8 +1,9 @@
 import os
 import warnings
 import sys
+sys.path.append("..") 
 import numpy as np
-from get_data import read_params
+from src.get_data import read_params
 import argparse
 from urllib.parse import urlparse
 import json
@@ -12,10 +13,38 @@ import pickle
 import mlflow
 
 
-def build_toy_model():
+def build_model():
     model = models.Sequential()
-    model.add(layers.Conv2D(64, (3, 3), input_shape=(96, 96, 3),
-                            kernel_initializer='he_normal', activation='relu'))
+    acti = 'relu'
+    model.add(layers.Conv2D(64, (3, 3), input_shape=(96,96,3), 
+              kernel_initializer='he_normal', activation=acti))
+    model.add(BatchNormalization(axis = -1))
+   
+    model.add(layers.Conv2D(64, (3, 3), kernel_initializer='he_normal',activation=acti))
+    model.add(BatchNormalization(axis= 2))
+    model.add(layers.Conv2D(128, (3, 3), kernel_initializer='he_normal',activation=acti))
+    model.add(BatchNormalization(axis= 2))
+    model.add(layers.MaxPooling2D(pool_size=(2, 2)))
+    
+    model.add(layers.Conv2D(128, (3, 3), kernel_initializer='he_normal',activation=acti))
+    model.add(BatchNormalization(axis= 2))
+    model.add(Dropout(0.5))
+    model.add(layers.Conv2D(128, (3, 3), kernel_initializer='he_normal',activation=acti))
+    model.add(BatchNormalization(axis= 2))
+    model.add(layers.Conv2D(128, (3, 3), kernel_initializer='he_normal',activation=acti))
+    model.add(BatchNormalization(axis= 2))
+    model.add(layers.MaxPooling2D(pool_size=(2, 2)))
+    model.add(layers.Conv2D(256, (3, 3), kernel_initializer='he_normal',activation=acti))
+    model.add(BatchNormalization(axis= 2))
+    model.add(Dropout(0.25))
+    model.add(layers.Conv2D(256, (3, 3), kernel_initializer='he_normal',activation=acti))
+    model.add(BatchNormalization(axis= 2))
+    model.add(layers.Conv2D(256, (3, 3), kernel_initializer='he_normal',activation=acti))
+    model.add(BatchNormalization(axis= 2))
+    model.add(layers.MaxPooling2D(pool_size=(2, 2)))
+    model.add(layers.Conv2D(10, (1, 1), kernel_initializer='he_normal',activation=acti)) 
+    model.add(BatchNormalization(axis= 2))
+    model.add(layers.AveragePooling2D(pool_size=(6, 6)))
     model.add(layers.Flatten())
     model.add(layers.Dense(1, activation='sigmoid'))
     model.compile(optimizer='rmsprop',
@@ -56,7 +85,7 @@ def train_and_evaluate(config_path):
 
     with mlflow.start_run(run_name=mlflow_config["run_name"]) as mlops_run:
 
-        model = build_toy_model()
+        model = build_model()
         model.fit(X_train, y_train, epochs=1, batch_size=32,
                   verbose=1, validation_data=(X_val, y_val)) #, callbacks=[save])
         print(y_val.shape, y_train.shape)
@@ -98,10 +127,11 @@ def train_and_evaluate(config_path):
         else:
             mlflow.keras.load_model(model, "model")
 
-        # os.makedirs(model_dir, exist_ok=True)
-        # model_path = os.path.join(model_dir, "model.h5")
-        #
-        # model.save(model_path)
+        os.makedirs(model_dir, exist_ok=True)
+        model_path = os.path.join(model_dir, "model.h5")
+
+        model.save(model_path)
+        model.save(config['webapp_model_dir'])
 
 
 if __name__ == "__main__":

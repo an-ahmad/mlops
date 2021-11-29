@@ -10,41 +10,47 @@ stages:
       md5: a668f1ae78ed71addf74af405169e69c
       size: 628
     - path: src/load_data.py
-      md5: 13b5d8cbd364716e4dd2f3683f580388
-      size: 506
+      md5: 3a4dbc1018d7af7f456e140795124d52
+      size: 543
     outs:
     - path: data/raw/data.pkl
-      md5: db0ce1f99a19c844e10a522c1dc35664
-      size: 12607892
+      md5: ed415e8c40324ad77735f2976ea8720c
+      size: 12607890
   split_data:
     cmd: python src/split_data.py --config=params.yaml
     deps:
     - path: data/raw/data.pkl
-      md5: db0ce1f99a19c844e10a522c1dc35664
-      size: 12607892
+      md5: ed415e8c40324ad77735f2976ea8720c
+      size: 12607890
     - path: src/split_data.py
-      md5: 59c96d6233cab5035f54587086d09a7b
-      size: 1108
+      md5: b48873496b34a522278471f672de1ccc
+      size: 1146
     outs:
     - path: data/processed/test_data.pkl
-      md5: 0b26ead5915217d997f1df60effcb20b
-      size: 2543838
+      md5: 36b8c53b07c7912679a3f522fbec4438
+      size: 2543836
     - path: data/processed/train_data.pkl
-      md5: ce13256cfdfc7620c080f551a0f533df
-      size: 10064230
+      md5: 7a21efc02bcc123fa5d7486165c609d5
+      size: 10064228
   train_and_evaluate:
     cmd: python src/train_and_evaluate.py --config=params.yaml
     deps:
     - path: data/processed/test_data.pkl
-      md5: 0b26ead5915217d997f1df60effcb20b
-      size: 2543838
+      md5: 36b8c53b07c7912679a3f522fbec4438
+      size: 2543836
     - path: data/processed/train_data.pkl
-      md5: ce13256cfdfc7620c080f551a0f533df
-      size: 10064230
+      md5: 7a21efc02bcc123fa5d7486165c609d5
+      size: 10064228
     - path: src/train_and_evaluate.py
-      md5: 1cd5be9113784470227313453e3fe3a0
-      size: 3665
+      md5: a81bb41b1e183919d2e18a90d576eaef
+      size: 3702
     params:
       params.yaml:
         estimators.cnn.params.batch_size: 10
         estimators.cnn.params.epochs: 2
+  log_production_model:
+    cmd: python src/log_production_model.py --config=params.yaml
+    deps:
+    - path: src/log_production_model.py
+      md5: 2ed4f44132ec444023c3ede245c07a04
+      size: 2017
