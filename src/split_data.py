@@ -6,6 +6,16 @@ from sklearn.model_selection import train_test_split
 from src.get_data import read_params
 import pickle
 
+def reshape_image(images):
+    '''For reshaping images to desired size'''
+    return numpy.asarray([images[i].reshape([96,96]) for i in range(len(images))])
+
+def undersampling(X,y):
+    '''For dealing with imbalanced data '''
+    undersample = RandomUnderSampler(sampling_strategy='majority')
+    X_over, y_over = undersample.fit_resample(X.reshape(X.shape[0],-1), y)
+    return X_over , y_over 
+
 def split_and_saved_data(config_path):
     config = read_params(config_path)
     test_data_path = config["split_data"]["test_path"]
