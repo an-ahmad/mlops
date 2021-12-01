@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f57db42b-fbac-4d7b-8116-62c83391f571" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../BCSE/Semester 7/SDP/randomness_testsuite-master/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dvc.lock" beforeDir="false" afterPath="$PROJECT_DIR$/dvc.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dvc.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/dvc.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mlflow.db" beforeDir="false" afterPath="$PROJECT_DIR$/mlflow.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prediction_service/model/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/prediction_service/model/model.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/src.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src.egg-info/SOURCES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log_production_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/log_production_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/split_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/split_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/train_and_evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train_and_evaluate.py" afterDir="false" />
     </list>
@@ -29,7 +23,8 @@
           <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="7" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -41,7 +36,7 @@
           <entry key="json" value="7" />
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
-          <entry key="py" value="34" />
+          <entry key="py" value="35" />
           <entry key="txt" value="2" />
           <entry key="yaml" value="3" />
         </counts>
@@ -53,7 +48,7 @@
           <entry key="JSON" value="7" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="34" />
+          <entry key="Python" value="35" />
           <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
@@ -62,8 +57,8 @@
           <entry key="html" value="27" />
           <entry key="ini" value="5" />
           <entry key="json" value="5" />
-          <entry key="py" value="1937" />
-          <entry key="txt" value="134" />
+          <entry key="py" value="2071" />
+          <entry key="txt" value="135" />
           <entry key="yaml" value="119" />
         </counts>
       </usages-collector>
@@ -71,8 +66,8 @@
         <counts>
           <entry key="HTML" value="27" />
           <entry key="JSON" value="5" />
-          <entry key="PLAIN_TEXT" value="139" />
-          <entry key="Python" value="1937" />
+          <entry key="PLAIN_TEXT" value="140" />
+          <entry key="Python" value="2071" />
           <entry key="YAML" value="119" />
         </counts>
       </usages-collector>
@@ -81,22 +76,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
+        <entry file="file://$PROJECT_DIR$/src/train_and_evaluate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            <state relative-caret-position="425">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/train_and_evaluate.py">
+        <entry file="file://$PROJECT_DIR$/src/split_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="133" column="16" selection-start-line="133" selection-start-column="16" selection-end-line="133" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="385">
+              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -113,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/log_production_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
+            <state relative-caret-position="465">
               <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -136,6 +131,7 @@
       <find>saved_models/model.h5</find>
       <find>logged_model</find>
       <find>data</find>
+      <find>build_model</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,7 +143,6 @@
         <option value="$PROJECT_DIR$/template.py" />
         <option value="$PROJECT_DIR$/src/get_data.py" />
         <option value="$PROJECT_DIR$/src/load_data.py" />
-        <option value="$PROJECT_DIR$/src/split_data.py" />
         <option value="$PROJECT_DIR$/report/scores.json" />
         <option value="$PROJECT_DIR$/report/params.json" />
         <option value="$PROJECT_DIR$/tox.ini" />
@@ -158,18 +153,19 @@
         <option value="$PROJECT_DIR$/webapp/templates/index.html" />
         <option value="$PROJECT_DIR$/webapp/templates/404.html" />
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/params.yaml" />
         <option value="$PROJECT_DIR$/prediction_service/prediction.py" />
         <option value="$PROJECT_DIR$/dvc.yaml" />
-        <option value="$PROJECT_DIR$/src/train_and_evaluate.py" />
         <option value="$PROJECT_DIR$/src/log_production_model.py" />
         <option value="$PROJECT_DIR$/Airflow/airflowdags.py" />
         <option value="$PROJECT_DIR$/airflowdags.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/src/train_and_evaluate.py" />
+        <option value="$PROJECT_DIR$/src/split_data.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="40" />
     <option name="y" value="23" />
     <option name="width" value="1400" />
@@ -188,6 +184,11 @@
             <path>
               <item name="mlops" type="b2602c69:ProjectViewProjectNode" />
               <item name="mlops" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mlops" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mlops" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -234,9 +235,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="23" width="1400" height="820" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15445976" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15010571" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -247,7 +249,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32967034" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34752747" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3048193" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32967034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -273,13 +275,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/split_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -371,10 +366,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Airflow/airflowdags.py" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/airflowdags.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        <state relative-caret-position="15">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -385,16 +380,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/airflowdags.py">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="225">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/train_and_evaluate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/log_production_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
+        <state relative-caret-position="465">
           <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -402,13 +407,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/train_and_evaluate.py">
+    <entry file="file://$PROJECT_DIR$/src/split_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="133" column="16" selection-start-line="133" selection-start-column="16" selection-end-line="133" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="385">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="37" />
         </state>
       </provider>
     </entry>

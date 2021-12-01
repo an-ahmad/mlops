@@ -13,3 +13,4 @@ flask
 requests
 gunicorn
 mlflow
+imblearn

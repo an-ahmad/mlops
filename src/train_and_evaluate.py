@@ -11,6 +11,8 @@ from tensorflow.keras import models
 from tensorflow.keras import layers
 import pickle
 import mlflow
+from tensorflow.keras.layers import BatchNormalization
+from tensorflow.keras.layers import Dropout
 
 
 def build_model():
@@ -18,32 +20,32 @@ def build_model():
     acti = 'relu'
     model.add(layers.Conv2D(64, (3, 3), input_shape=(96,96,3), 
               kernel_initializer='he_normal', activation=acti))
-    model.add(BatchNormalization(axis = -1))
+    model.add(BatchNormalization())
    
     model.add(layers.Conv2D(64, (3, 3), kernel_initializer='he_normal',activation=acti))
     model.add(BatchNormalization(axis= 2))
     model.add(layers.Conv2D(128, (3, 3), kernel_initializer='he_normal',activation=acti))
-    model.add(BatchNormalization(axis= 2))
+    model.add(BatchNormalization())
     model.add(layers.MaxPooling2D(pool_size=(2, 2)))
     
     model.add(layers.Conv2D(128, (3, 3), kernel_initializer='he_normal',activation=acti))
-    model.add(BatchNormalization(axis= 2))
+    model.add(BatchNormalization())
     model.add(Dropout(0.5))
     model.add(layers.Conv2D(128, (3, 3), kernel_initializer='he_normal',activation=acti))
-    model.add(BatchNormalization(axis= 2))
+    model.add(BatchNormalization())
     model.add(layers.Conv2D(128, (3, 3), kernel_initializer='he_normal',activation=acti))
-    model.add(BatchNormalization(axis= 2))
+    model.add(BatchNormalization())
     model.add(layers.MaxPooling2D(pool_size=(2, 2)))
     model.add(layers.Conv2D(256, (3, 3), kernel_initializer='he_normal',activation=acti))
-    model.add(BatchNormalization(axis= 2))
+    model.add(BatchNormalization())
     model.add(Dropout(0.25))
     model.add(layers.Conv2D(256, (3, 3), kernel_initializer='he_normal',activation=acti))
-    model.add(BatchNormalization(axis= 2))
+    model.add(BatchNormalization())
     model.add(layers.Conv2D(256, (3, 3), kernel_initializer='he_normal',activation=acti))
-    model.add(BatchNormalization(axis= 2))
+    model.add(BatchNormalization())
     model.add(layers.MaxPooling2D(pool_size=(2, 2)))
     model.add(layers.Conv2D(10, (1, 1), kernel_initializer='he_normal',activation=acti)) 
-    model.add(BatchNormalization(axis= 2))
+    model.add(BatchNormalization())
     model.add(layers.AveragePooling2D(pool_size=(6, 6)))
     model.add(layers.Flatten())
     model.add(layers.Dense(1, activation='sigmoid'))

@@ -23,27 +23,27 @@ stages:
       md5: ed415e8c40324ad77735f2976ea8720c
       size: 12607890
     - path: src/split_data.py
-      md5: b48873496b34a522278471f672de1ccc
-      size: 1146
+      md5: fbc4948700b8fff6ca02e03d76612b32
+      size: 1675
     outs:
     - path: data/processed/test_data.pkl
-      md5: 36b8c53b07c7912679a3f522fbec4438
-      size: 2543836
+      md5: 07707304b57e36c7f2c575504eb589df
+      size: 2212054
     - path: data/processed/train_data.pkl
-      md5: 7a21efc02bcc123fa5d7486165c609d5
-      size: 10064228
+      md5: cd993976e3d25c7990f11ea77c98aeae
+      size: 8847694
   train_and_evaluate:
     cmd: python src/train_and_evaluate.py --config=params.yaml
     deps:
     - path: data/processed/test_data.pkl
-      md5: 36b8c53b07c7912679a3f522fbec4438
-      size: 2543836
+      md5: 07707304b57e36c7f2c575504eb589df
+      size: 2212054
     - path: data/processed/train_data.pkl
-      md5: 7a21efc02bcc123fa5d7486165c609d5
-      size: 10064228
+      md5: cd993976e3d25c7990f11ea77c98aeae
+      size: 8847694
     - path: src/train_and_evaluate.py
-      md5: a81bb41b1e183919d2e18a90d576eaef
-      size: 3702
+      md5: 9b39056fa7be03165a9cdee3f08c32a7
+      size: 5274
     params:
       params.yaml:
         estimators.cnn.params.batch_size: 10

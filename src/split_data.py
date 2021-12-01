@@ -5,6 +5,8 @@ import argparse
 from sklearn.model_selection import train_test_split
 from src.get_data import read_params
 import pickle
+from imblearn.under_sampling import RandomUnderSampler
+import numpy
 
 def reshape_image(images):
     '''For reshaping images to desired size'''
@@ -12,7 +14,7 @@ def reshape_image(images):
 
 def undersampling(X,y):
     '''For dealing with imbalanced data '''
-    undersample = RandomUnderSampler(sampling_strategy='majority')
+    undersample = RandomUnderSampler(sampling_strategy='auto')
     X_over, y_over = undersample.fit_resample(X.reshape(X.shape[0],-1), y)
     return X_over , y_over 
 
@@ -28,7 +30,8 @@ def split_and_saved_data(config_path):
     sem_imgs = pickle.load(open(raw_data_path, 'rb'))
     X = sem_imgs[0]
     y = sem_imgs[1]
-
+    X , y = undersampling(X,y)
+    X = X.reshape(X.shape[0],96,96,3)
     X_train, X_val, y_train, y_val = train_test_split(X, y, stratify=y,\
             train_size=split_ratio["train_size"], test_size=split_ratio["test_size"], random_state=random_state)
     pickle.dump([X_train,y_train], open(train_data_path, 'wb'))
