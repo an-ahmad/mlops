@@ -1,4 +1,7 @@
-to execute code run these commands]
+to execute code run these commands in order
+
+
+pip install -r requirements.txt
 
 dvc repro
 
